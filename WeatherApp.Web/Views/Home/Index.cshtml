@@ -1,0 +1,46 @@
+﻿@model WeatherApp.DAL.Entity.Location
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/css/Index.css" rel="stylesheet" />
+
+<div class="box">
+    <form asp-action="Index" asp-controller="home">
+        <input class="text-white align-content-center" required asp-for="City" id="city" placeholder="Write your city" type="text" name="city" value="" />
+        <input id="send" type="submit" name="send"  class="text-white" value="Send" />
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*private string GetUserIP()
+{
+string ipList = Request.ServerVariables["HTTP_X_FORWARDED_FOR"];
+
+if (!string.IsNullOrEmpty(ipList))
+{
+return ipList.Split(',')[0];
+}
+
+return Request.ServerVariables["REMOTE_ADDR"];
+}*@

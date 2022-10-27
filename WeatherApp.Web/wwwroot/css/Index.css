@@ -1,0 +1,40 @@
+﻿body {
+    background-color: #130c27;
+}
+
+#city {
+    width: 221px;
+    height: 40px;
+    background: #422A69;
+    border-radius: 20px;
+    outline:none;
+    border: none;
+    padding-bottom:-100px;
+    vertical-align: middle;
+}
+
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    vertical-align: middle;
+}
+
+
+#send {
+    width: 60px;
+    height: 40px;
+    background: #260a55;
+    border-radius: 40px;
+    outline: none;
+    border: none;
+}
+
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color: white;
+}

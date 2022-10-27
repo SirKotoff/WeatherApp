@@ -1,0 +1,78 @@
+﻿@model IEnumerable<WeatherApp.DAL.Entity.Location>
+
+@*<link href="~/css/WeatherInfo.css" rel="stylesheet" />*@
+
+<style>
+    body {
+        background-color: #130c27;
+    }
+
+
+    div .box{
+        box-sizing: border-box;
+        width: 140px;
+        height: 180px;
+        background: #422A69;
+        border: 1px solid #000000;
+        border-radius: 50px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5"></div>
+        @foreach (var location in Model.ToList().TakeLast(1))
+        {
+            <div class="col-sm-2 text-lg-center">
+                <div class="text-white  box text-center" style="max-width:140px; max-width:180px;">
+                    <h5 class="text-white">@location.City</h5>
+                    @if (location.TemperatureC.Contains("Clouds"))
+                    {
+                        <img class="align-self-center" src="~/img/6.png" alt="Alternate Text" />
+                    }
+
+                    @if (location.TemperatureC.Contains("Thunderstorm"))
+                    {
+                        <img class="align-self-center" src="~/img/7.png" alt="Alternate Text" />
+                    }
+                    @if (location.TemperatureC.Contains("Drizzle"))
+                    {
+                        <img class="align-self-center" src="~/img/4.png" alt="Alternate Text" />
+                    }
+                    @if (location.TemperatureC.Contains("Rain"))
+                    {
+                        <img class="align-self-center" src="~/img/2.png" alt="Alternate Text" />
+                    }
+                    @if (location.TemperatureC.Contains("Snow"))
+                    {
+                        <img class="align-self-center" src="~/img/5.png" alt="Alternate Text" />
+                    }
+                    @if (location.TemperatureC.Contains("Clear"))
+                    {
+                        <img class="align-self-center" src="~/img/icons8-лето-48.png" alt="Alternate Text" />
+                    }
+
+
+                    <h6 class="text-white">@location.TemperatureC C°</h6>
+                </div>
+            </div>
+        }
+        <div class="col-sm-5"></div>
+
+    </div>
+    
+    
+    @foreach (var a in Model.ToList().TakeLast(4))
+    {
+        <div class="row align-items-center">
+            <div class="col-sm-3">
+                @*<div class="text-white box text-center" style="max-width:140px; max-width:180px;">*@
+                <h5 class="text-white">@a.City</h5>
+                @*</div>*@
+            </div>
+        </div>
+
+
+    }
+</div>
